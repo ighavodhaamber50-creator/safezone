@@ -143,11 +143,12 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; letter-spacing: -0.02em; }
+  h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; letter-spacing: -0.02em; font-weight: 700; }
 }
+
 
 @layer utilities {
   .bg-gradient-hero { background-image: var(--gradient-hero); }
