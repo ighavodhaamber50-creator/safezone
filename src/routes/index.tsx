@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Shield, MapPin, Bell, Users, History, ArrowRight, CheckCircle2 } from "lucide-react";
+import familyAsset from "@/assets/family.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
