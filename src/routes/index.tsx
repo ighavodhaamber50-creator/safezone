@@ -29,11 +29,14 @@ function Landing() {
       {/* Nav */}
       <header className="absolute top-0 inset-x-0 z-20">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2 text-primary-foreground">
-            <div className="w-9 h-9 rounded-xl bg-white/15 backdrop-blur grid place-items-center">
-              <Shield className="w-5 h-5" strokeWidth={2.5} />
+          <div className="flex items-center gap-2.5 text-primary-foreground">
+            <div className="relative w-10 h-10 rounded-2xl bg-white/15 backdrop-blur grid place-items-center ring-1 ring-white/30">
+              <MapPin className="w-5 h-5" strokeWidth={2.5} fill="currentColor" fillOpacity={0.2} />
             </div>
-            <span className="font-bold text-lg">SafeTrace</span>
+            <div className="leading-tight">
+              <div className="font-extrabold tracking-tight text-lg">Safe<span className="opacity-80">Trace</span></div>
+              <div className="text-[10px] uppercase tracking-[0.16em] opacity-75 font-semibold">Family safety</div>
+            </div>
           </div>
           <Link
             to="/login"
@@ -43,6 +46,7 @@ function Landing() {
           </Link>
         </div>
       </header>
+
 
       {/* Hero */}
       <section className="relative bg-gradient-hero text-primary-foreground overflow-hidden">
