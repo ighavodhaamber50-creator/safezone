@@ -8,6 +8,7 @@ import {
   Settings,
   AlertCircle,
 } from "lucide-react";
+
 import type { ReactNode } from "react";
 
 const navItems = [
@@ -28,15 +29,16 @@ export function AppShell({ children: pageChildren }: { children?: ReactNode }) {
     <div className="min-h-screen bg-background text-foreground">
       {/* Desktop sidebar */}
       <aside className="hidden lg:flex fixed inset-y-0 left-0 w-64 flex-col border-r border-border bg-sidebar">
-        <div className="h-16 flex items-center gap-2 px-6 border-b border-sidebar-border">
-          <div className="w-9 h-9 rounded-xl bg-gradient-hero grid place-items-center text-primary-foreground shadow-soft">
-            <Shield className="w-5 h-5" strokeWidth={2.5} />
+        <div className="h-16 flex items-center gap-2.5 px-6 border-b border-sidebar-border">
+          <div className="relative w-10 h-10 rounded-2xl bg-gradient-hero grid place-items-center text-primary-foreground shadow-soft ring-1 ring-white/30">
+            <MapPin className="w-5 h-5" strokeWidth={2.5} fill="currentColor" fillOpacity={0.2} />
           </div>
-          <div>
-            <div className="font-bold text-sidebar-foreground leading-tight">SafeTrace</div>
-            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Family safety</div>
+          <div className="leading-tight">
+            <div className="font-extrabold text-sidebar-foreground tracking-tight">Safe<span className="text-primary">Trace</span></div>
+            <div className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground font-semibold">Family safety</div>
           </div>
         </div>
+
         <nav className="flex-1 p-3 space-y-1">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -69,11 +71,12 @@ export function AppShell({ children: pageChildren }: { children?: ReactNode }) {
       {/* Mobile top header */}
       <header className="lg:hidden sticky top-0 z-30 h-14 flex items-center justify-between px-4 border-b border-border bg-background/90 backdrop-blur">
         <Link to="/app" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-hero grid place-items-center text-primary-foreground">
-            <Shield className="w-4 h-4" strokeWidth={2.5} />
+          <div className="relative w-8 h-8 rounded-xl bg-gradient-hero grid place-items-center text-primary-foreground ring-1 ring-white/30">
+            <MapPin className="w-4 h-4" strokeWidth={2.5} fill="currentColor" fillOpacity={0.2} />
           </div>
-          <span className="font-bold">SafeTrace</span>
+          <span className="font-extrabold tracking-tight">Safe<span className="text-primary">Trace</span></span>
         </Link>
+
         <Link
           to="/app/alerts"
           className="relative w-9 h-9 grid place-items-center rounded-full bg-secondary text-secondary-foreground"

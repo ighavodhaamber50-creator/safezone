@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { Shield, Mail, Lock, ArrowRight } from "lucide-react";
+import { Shield, Mail, Lock, ArrowRight, MapPin } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/login")({
@@ -21,12 +21,13 @@ function LoginPage() {
     <div className="min-h-screen grid lg:grid-cols-2">
       {/* Left: form */}
       <div className="flex flex-col p-8 lg:p-12">
-        <Link to="/" className="flex items-center gap-2 self-start">
-          <div className="w-9 h-9 rounded-xl bg-gradient-hero grid place-items-center text-primary-foreground shadow-soft">
-            <Shield className="w-5 h-5" strokeWidth={2.5} />
+        <Link to="/" className="flex items-center gap-2.5 self-start">
+          <div className="relative w-10 h-10 rounded-2xl bg-gradient-hero grid place-items-center text-primary-foreground shadow-soft ring-1 ring-white/30">
+            <MapPin className="w-5 h-5" strokeWidth={2.5} fill="currentColor" fillOpacity={0.2} />
           </div>
-          <span className="font-bold">SafeTrace</span>
+          <span className="font-extrabold tracking-tight">Safe<span className="text-primary">Trace</span></span>
         </Link>
+
 
         <div className="flex-1 grid place-items-center">
           <div className="w-full max-w-sm">

@@ -182,4 +182,36 @@
     background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
   }
 
+  /* Entrance + interaction animations */
+  @keyframes float-in {
+    0% { opacity: 0; transform: translateY(20px) scale(0.96); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes pop-in {
+    0% { opacity: 0; transform: translateY(8px) scale(0.9); }
+    60% { opacity: 1; transform: translateY(-2px) scale(1.03); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes fade-up {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float-y {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .animate-float-in { animation: float-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  .animate-pop-in { animation: pop-in 0.7s 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) both, float-y 5s ease-in-out 1.2s infinite; }
+  .animate-pop-in-delayed { animation: pop-in 0.7s 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both, float-y 6s ease-in-out 1.4s infinite; }
+  .animate-pop-in-delayed2 { animation: pop-in 0.7s 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both, float-y 7s ease-in-out 1.6s infinite; }
+  .animate-fade-up { animation: fade-up 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+  /* Smooth page surface transitions */
+  main > * { animation: fade-up 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+  /* Card hover lift */
+  .lift { transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s; }
+  .lift:hover { transform: translateY(-2px); box-shadow: 0 12px 32px oklch(0.2 0.05 150 / 0.12); }
 }
+
